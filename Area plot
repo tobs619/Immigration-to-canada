@@ -25,6 +25,8 @@ df_can.drop(['AREA', 'REG', 'DEV', 'Type', 'Coverage'], axis=1, inplace=True)
 df_can.rename(columns={'OdName':'Country', 'AreaName':'Continent','RegName':'Region'}, inplace=True)
 
 all(isinstance(column, str) for column in df_can.columns)
+df_can.columns = list(map(str, df_can.columns))
+
 
 df_can.set_index('Country', inplace=True)
 
